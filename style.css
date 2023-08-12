@@ -5,7 +5,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    background-color: rgb(62, 60, 60);
+    background-color: rgb(23, 22, 22);
 }
 
 .upper {
@@ -27,12 +27,20 @@ body {
 }
 
 .logocontainer img {
-    width: 400px;
+    width: 70px;
 }
 
 .navigation {
     display: block;
     overflow: hidden;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    margin-right: 7px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 34px;
+    backdrop-filter: blur(40px);
+    z-index: 2;
 }
 
 #navbar {
@@ -50,7 +58,7 @@ body {
 #navbar li a {
     display: inline-block;
     margin: 7px 20px;
-    padding: 2px 20px;
+    padding: 0px 20px;
     font-size: 1.9rem;
     color: white;
     text-decoration: none;
@@ -72,8 +80,8 @@ body {
 .imagecontainer {
     border: 2px solid white;
     display: inline-block;
-    margin: 15px 12px;
-    margin: auto;
+    margin: 150px auto;
+    /* margin: auto; */
     width: 500px;
     height: 350px;
     border-radius: 30px;
@@ -90,6 +98,10 @@ body {
     margin: 15px;
     padding: 5px;
     justify-content: center;
+    background: linear-gradient(132deg, #c3aa05, #b50eb5, #3f4dcd);
+    background-size: 400% 400%;
+    animation: Gradient 10s ease infinite;
+    position: relative;
 }
 
 .section-items {
@@ -97,18 +109,107 @@ body {
     margin: 15px;
     padding: 15px;
     border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.215);
+    background-color: rgba(255, 255, 255, 0.3);
     font-size: 20px;
-}
+    /* backdrop-filter: blur(20px); */
 
+}
+@keyframes Gradient {
+    0% {
+      background-position:0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+@keyframes change-background {
+ /** 0% {
+    background: radial-gradient(circle at 30% 107%, #97b1fd 0%, #97b1fd 5%, #504beb 45%, #9668da 60%, #4c6fd7 90%);
+  }
+  25% {
+    background: radial-gradient(circle at 30% 107%, #97b1fd 0%, #97b1fd 5%, #504beb 45%, #a149e4 60%, #285aeb 90%);
+  }
+  50% {
+    background: radial-gradient(circle at 30% 107%, #97b1fd 0%, #97b1fd 5%, #504beb 45%, #a344ec 60%, #1e52ec 90%);
+  }
+  75% {
+    background: radial-gradient(circle at 30% 107%, #97b1fd 0%, #97b1fd 5%, #504beb 45%, #a149e4 60%, #285aeb 90%);
+  }
+  100% {
+    background: radial-gradient(circle at 30% 107%, #97b1fd 0%, #97b1fd 5%, #504beb 45%, #9668da 60%, #4c6fd7 90%);
+  }**/
+}
 .section-items:hover {
     position: relative;
     bottom: 7px;
     right: 7px;
     box-shadow: 7px 7px white;
-    /* transition: 0.3s; */
+    /* transition: 0.5s; */
 }
 
+.questions{
+    background: url('ai_bot_2\ 1.gif') no-repeat center center/cover; 
+     height: 100vh; 
+    border-radius: 34px;
+    color: white;
+}
+.question{
+    color: aliceblue;
+}
+.faq{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 700px;
+    }
+    .faq li{
+        list-style: none;
+        width: 100%;
+        padding: 5px;
+        font-size: 19px;
+    }
+    .faq  li label{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 2px;
+        cursor: pointer;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.347);
+        backdrop-filter: blur(20px);
+        border-radius: 17px;
+    }
+    label::after{
+        content: '+';
+        font-size: 33px;
+        position: absolute;
+        right: 20px;
+        transition: transform 0.6s;
+    }
+    input[type="radio"]
+    {
+        display: none;
+    }
+    .faq .container1{
+        background: transparent;
+        text-align: left;
+        padding:0px 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s,padding 0.5s;
+
+    }
+    .faq input[type="radio"]:checked+label+.container1{
+        max-height: 600px;
+        padding: 30px 20px;
+    }
+    .faq input[type="radio"]:checked+label::after{
+        transform: rotate(137deg);
+    }
 footer {
     background-color: black;
     color: white;
@@ -130,21 +231,29 @@ footer img{
 }
 
 .gototop button {
-    background-color: grey;
+    background-color: rgba(128, 128, 128, 0.109);
     margin: 15px;
-    padding: 20px 20px;
+    padding: 0px 20px;
     border-radius: 100%;
     position: fixed;
     bottom: 15px;
     right: 15px;
     font-size: 3rem;
-    border: 2px solid black;
+    border: 2px solid white;
     outline: 3px solid green;
     outline-offset: -7px;
     transition: 0.2s;
+    color: white;
 }
 
 .gototop button:hover {
     cursor: pointer;
     outline-offset: 3px;
+}
+
+.copyright{
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: rgb(23, 22, 22);
+    color: white;
 }
